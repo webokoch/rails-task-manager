@@ -3,5 +3,7 @@
 <h2><%= @task.title %></h2>
 <h3><%=  @task.details%></h3>
 
+<%= link_to "Update task", edit_task_path %>
+
 
 <%= link_to "Back to all tasks", tasks_path%>
