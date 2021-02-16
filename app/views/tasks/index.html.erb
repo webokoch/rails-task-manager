@@ -1,12 +1,17 @@
-<h1>My Tasks</h1>
+<div class="container">
+  <h1>My Tasks</h1>
 
-<ul>
-  <% @tasks.each do |task| %>
-    <li>
-      <%= link_to task.title, task_path(task) %>
-      <%= link_to "🗑", task_path(task), method: :delete %>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @tasks.each do |task| %>
+      <li>
+        <div class="flex">
+          <%= task.completed ? '<i class="far fa-check-square"></i>'.html_safe : '<i class="far fa-square"></i>'.html_safe %>
+          <%= link_to task.title, task_path(task) %>
+          <p> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, task_path(task), method: :delete, data: { confirm: "Delete #{task.title}?" }%> </p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 
- <p> <%= link_to "Add a new task", new_task_path %> </p>
+   <p class="btn"> <%= link_to "Add a new task", new_task_path %> </p>
+</div>
