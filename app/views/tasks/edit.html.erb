@@ -1,9 +1,7 @@
 <div class="container">
-
   <h1> <%= @task.title %> </h1>
-
   <div class="form">
-  <%= form_for(@task) do |f| %>
+    <%= form_for(@task) do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
     <br>
@@ -16,7 +14,7 @@
     <%= f.check_box :completed %>
     <br>
     <br>
-   <p class="btn"> <%= f.submit %> </p>
-  <% end %>
+    <p class="btn"> <%= f.submit %> </p>
+    <% end %>
   </div>
 </div>
